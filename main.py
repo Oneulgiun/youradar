@@ -4,8 +4,8 @@ import streamlit as st
 def password_gate():
     st.title("🔒 YouRadar Access")
     password = st.text_input("비밀번호를 입력하세요", type="password")
-    if password == "you2025!":
-        return True
+if password == "you2025!":
+    return True
     elif password:
         st.error("비밀번호가 틀렸습니다.")
         return False
