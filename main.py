@@ -13,7 +13,7 @@ def login():
         if submitted:
             if password == "you2025!":
                 st.session_state.authenticated = True
-                st.rerun()  # ✅ 최신 버전에서 사용해야 하는 rerun 함수
+                st.rerun()  # ✅ 최신 streamlit에서는 이렇게 써야 함
             else:
                 st.error("비밀번호가 틀렸습니다.")
 
