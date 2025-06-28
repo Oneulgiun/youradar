@@ -4,13 +4,15 @@ def password_gate():
     st.title("🔐 YouRadar Access")
     password = st.text_input("비밀번호를 입력하세요", type="password")
 
-    if password:
-        if password.strip() == "you2025!":
-            return True
-        else:
-            st.error("❌ 비밀번호가 틀렸습니다.")
-            st.stop()
+    # 비밀번호 입력 안 했으면 멈춤
+    if password == "":
+        st.stop()
+
+    # 비밀번호 일치하면 통과
+    if password == "you2025!":
+        return True
     else:
+        st.error("비밀번호가 틀렸습니다.")
         st.stop()
 
 if password_gate():
